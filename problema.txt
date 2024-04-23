@@ -1,0 +1,60 @@
+Flatland é um pais com varias cidades, algumas das quais possuem estações espaciais.
+ As cidades são numeradas cosecutivamente e cada uma tem uma estrada de 1km de comprimento conectando-o
+à próxima cidade. Não é uma rota circular, portanto a primeira cidade não se conecta com a ultima cidade.
+Determine a distância máxima de qualquer cidade até a estação espacial mais próxima.
+
+Exemplo
+n = 3
+C= [1]
+
+Há n=3 cidades e 1 cidade tem uma estação espacial. Eles ocorrem consecutivamente ao longo de uma rota. A cidade
+0 é 1 - 0 = 1 unidades de distância e cidade 2 é 2-1 = 1 unidades de distancia. 
+Cidade 1 é 0 unidades de sua estação espacial mais próxima, pois está localizada lá. A distância máxima é 1.
+
+Desenvolva a função
+Complete a função flatlandSpacesStations - já existe trechos do código prontos abaixo.
+flatlandSpacesStations tem os seguintes parâmetros:
+int n: o número de cidadesintc[m]: os indices de cidades com estação espacial
+Retorna
+int: a distância máxima que qualquer cidade está de uma estação espacial
+formato de entrada
+
+A primeira linha consiste em dois inteiros separados por espaço n e m.
+A segunda linha contém inteiros separados por espaço, os indices de cada cidade que possui uma estação espacial.
+Esses valores são desordenados e distintos.
+
+Restriçoes:
+1 <= n <= 105
+1 <= m <= n
+Haverá pelo menos 1 cidade com estação espacial.
+nenhuma cidade tem mais de uma estação espacial.
+
+Exemplo de entrada (1)
+
+Função STDIN
+------------
+5 2 N = 5, C[] tamanho m = 2
+0 4 c = [0,4]
+
+Exemplo de saída (1)
+2
+
+Explicação (1)
+
+A distância até a estação mais próxima para cada cidade está listada abaixo:
+c[0] tem distância 0km, pois contem uma estação espacial.
+c[1] tem distância 1km, para a estação em c[0]
+c[2] tem distância 2km, para a estação c[0] e c[4]
+c[3] tem distância 1km, para a estação em c[4]
+c[4] tem distância 0km, pois contem uma estação espacial.
+
+tomamos então: max (0,1,2,1,0) = 2
+
+Exemplo de entrada (2)
+6 6
+0 1 2 4 3 5
+
+Exemplo de saída (2)
+0
+
+Nessa amostra então toda cidade tem estação espacial e nós imprimimos 0 como nossa resposta
